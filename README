@@ -8,3 +8,4 @@ Options:
 startclass in the bot's pm.
 endclass in bot's pm.
 pingall - pingall: [message]
+kick - kick: [nick_name_to_be_kicked]
