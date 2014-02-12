@@ -36,7 +36,7 @@ class LogBot(irc.IRCClient):
 
     def  __init__(self, channel):
         self.chn = '#'+channel
-        self.channel_admin = ['kushal', 'sayan']
+        self.channel_admin = ['kushal', 'sayan','tenstormavi']
 
     def connectionMade(self):
         irc.IRCClient.connectionMade(self)
@@ -103,6 +103,10 @@ class LogBot(irc.IRCClient):
         if msg.lower().startswith('pingall:') and user_cond:
             self.pingmsg = msg.lower().lstrip('pingall:')
             self.names(channel).addCallback(self.pingall)
+        
+        if msg.lower().startswith('kick:') and user_cond:
+            kiee = msg.lower().lstrip('kick:')
+            self.kick(channel, kiee, reason=None)
 
     def action(self, user, channel, msg):
         """This will get called when the bot sees someone do an action."""
