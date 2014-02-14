@@ -36,7 +36,7 @@ class LogBot(irc.IRCClient):
 
     def  __init__(self, channel):
         self.chn = '#'+channel
-        self.channel_admin = ['kushal', 'sayan','tenstormavi']
+        self.channel_admin = ['kushal', 'sayan']
 
     def connectionMade(self):
         irc.IRCClient.connectionMade(self)
